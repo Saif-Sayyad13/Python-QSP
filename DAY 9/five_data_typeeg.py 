@@ -1,0 +1,803 @@
+Python 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] on win32
+Enter "help" below or click "Help" above for more information.
+a = "aBcd GoOD 'abc' {1:2} PythoN 123"
+a
+"aBcd GoOD 'abc' {1:2} PythoN 123"
+
+# upper()
+a.upper()
+"ABCD GOOD 'ABC' {1:2} PYTHON 123"
+
+# lower()
+a.lower()
+"abcd good 'abc' {1:2} python 123"
+
+# swapcase()
+a.swapcase()
+"AbCD gOod 'ABC' {1:2} pYTHOn 123"
+
+# capitalize()
+a.capitalize()
+"Abcd good 'abc' {1:2} python 123"
+
+# title()
+a.title()
+"Abcd Good 'Abc' {1:2} Python 123"
+
+# count()
+a.count(a)
+1
+
+a.count(c)
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    a.count(c)
+NameError: name 'c' is not defined
+
+a.count('a')
+2
+
+a.count('c')
+2
+
+# 7. isalpha()
+a.isaplha()
+Traceback (most recent call last):
+  File "<pyshell#28>", line 1, in <module>
+    a.isaplha()
+AttributeError: 'str' object has no attribute 'isaplha'. Did you mean: 'isalpha'?
+a.isalpha()
+False
+
+# 8. isalnum()
+a.isalnum()
+False
+
+# 9. isdigit()
+a.isdigit()
+False
+
+# 10. isupper()
+a.isupper()
+False
+
+# 11. islower()
+a.islower()
+False
+
+# 12. istitle()
+a.istitle()
+False
+
+# 13. isspace()
+a.isspace()
+False
+
+# 14. startswith()
+a.startswith('aB')
+True
+
+a.startswith('Go', 5, 8)
+True
+
+a.startswith('Go', 5)
+True
+
+# 15. endswith()
+a.endswith(123)
+Traceback (most recent call last):
+  File "<pyshell#57>", line 1, in <module>
+    a.endswith(123)
+TypeError: endswith first arg must be str or a tuple of str, not int
+
+a.endswith('123')
+True
+
+# 16. iskeyword()
+# 17. identifier()
+identifier.isidentifier(a)
+Traceback (most recent call last):
+  File "<pyshell#63>", line 1, in <module>
+    identifier.isidentifier(a)
+NameError: name 'identifier' is not defined
+isidentifier(a)
+Traceback (most recent call last):
+  File "<pyshell#64>", line 1, in <module>
+    isidentifier(a)
+NameError: name 'isidentifier' is not defined
+"a".isidentifier()
+True
+
+isidentifier("a")
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    isidentifier("a")
+NameError: name 'isidentifier' is not defined
+
+# 18. join()
+a
+"aBcd GoOD 'abc' {1:2} PythoN 123"
+"*".join(a)
+"a*B*c*d* *G*o*O*D* *'*a*b*c*'* *{*1*:*2*}* *P*y*t*h*o*N* *1*2*3"
+
+# 19 split
+a.split('d')
+['aBc', " GoOD 'abc' {1:2} PythoN 123"]
+a.split('o')
+['aBcd G', "OD 'abc' {1:2} Pyth", 'N 123']
+a.split('o', 7)
+['aBcd G', "OD 'abc' {1:2} Pyth", 'N 123']
+a.split('o', 1)
+['aBcd G', "OD 'abc' {1:2} PythoN 123"]
+
+# 20 rsplit()
+a.rsplit(''abc'')
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+a.rsplit('abc')
+["aBcd GoOD '", "' {1:2} PythoN 123"]
+a.rplit('o')
+Traceback (most recent call last):
+  File "<pyshell#83>", line 1, in <module>
+    a.rplit('o')
+AttributeError: 'str' object has no attribute 'rplit'. Did you mean: 'rsplit'?
+a.rsplit('o')
+['aBcd G', "OD 'abc' {1:2} Pyth", 'N 123']
+a.rsplit('o', 8)
+['aBcd G', "OD 'abc' {1:2} Pyth", 'N 123']
+a.rsplit('o', 1)
+["aBcd GoOD 'abc' {1:2} Pyth", 'N 123']
+
+
+# 21 index()
+a.index('a')
+0
+
+a.index('abc')
+11
+
+# 22 rindex()
+a.rindex('0')
+Traceback (most recent call last):
+  File "<pyshell#95>", line 1, in <module>
+    a.rindex('0')
+ValueError: substring not found
+a.rindex('o')
+26
+a.index('o')
+6
+
+# 23 find()
+a.find('o')
+6
+
+a.find('{1:2}')
+16
+
+# 24 rfind()
+a.rfind('{1:2}')
+16
+
+a.rfind('o')
+26
+
+# 25 strip()
+a.strip()
+"aBcd GoOD 'abc' {1:2} PythoN 123"
+a.strip('aB')
+"cd GoOD 'abc' {1:2} PythoN 123"
+a.strip('123')
+"aBcd GoOD 'abc' {1:2} PythoN "
+
+# lstrip()
+a.lstrip()
+"aBcd GoOD 'abc' {1:2} PythoN 123"
+a.lstrip('aB')
+"cd GoOD 'abc' {1:2} PythoN 123"
+
+# rstrip()
+a.rstrip('123')
+"aBcd GoOD 'abc' {1:2} PythoN "
+
+# 29 removeprefix()
+a.removeprefix()
+Traceback (most recent call last):
+  File "<pyshell#122>", line 1, in <module>
+    a.removeprefix()
+TypeError: str.removeprefix() takes exactly one argument (0 given)
+a.removeprefix()
+Traceback (most recent call last):
+  File "<pyshell#123>", line 1, in <module>
+    a.removeprefix()
+TypeError: str.removeprefix() takes exactly one argument (0 given)
+a.removeprefix('aB')
+"cd GoOD 'abc' {1:2} PythoN 123"
+
+# 30 removesuffix()
+a.removesuffix('123')
+"aBcd GoOD 'abc' {1:2} PythoN "
+
+'''
+1. upper()---> var.upper()
+2. lower()---> var.lower()
+3. swapcase()---> var.swapcase()
+4. capitalize() ----> var.capitalize()
+5. title() ---> var.title()
+6. count()---> var.count('char')
+7. isalnum() ---> var.isalnum()
+8. isalpha() ----> var.isalpha()
+9. isdigit() ----> var.isdigit()
+10. isupper() ---> var.isupper()
+11. islower() ----> var.islower()
+12. istitle() ----> var.istitle()
+13. isspace() ----> var.isspace()
+14. startswith() --> var.startswith('substring',si, ei+1)
+15. endswith() ----> var.endswith('substring', si, ei+1)
+16. iskeyword() ---> import keyword --> keyword.iskeyword('keyword_name')
+17. isidentifier() ---> "var".isidentifier()
+18. join() ----> "joining_character".join(var)
+19. split() ----> var.split("spliting_char', maxsplit)
+20. rsplit() ---> var.split("spliting_char', maxsplit)
+21. index() ---> var.index('char', si, ei+1)
+22. rindex() ---> var.rindex('char', si, ei+1)
+23. find() ----> var.find('char', si, ei+1)
+24. rfind() ---> var.rfind('char', si, ei)
+25. strip() ----> var.strip('substring')
+26. lstrip() ---> var.strip('substring')
+27. rstrip() ---> var.strip('substring')
+28. removeprefix() ----> var.removeprefix("substring', si, ei+1)
+29. removesuffix() ---> var.removesuffix("substring", si, ei+1)
+30. replace() ---> var.replace("old", "new")
+31. del keyword ----> del var_name
+'''
+'\n1. upper()---> var.upper()\n2. lower()---> var.lower()\n3. swapcase()---> var.swapcase()\n4. capitalize() ----> var.capitalize()\n5. title() ---> var.title()\n6. count()---> var.count(\'char\')\n7. isalnum() ---> var.isalnum()\n8. isalpha() ----> var.isalpha()\n9. isdigit() ----> var.isdigit()\n10. isupper() ---> var.isupper()\n11. islower() ----> var.islower()\n12. istitle() ----> var.istitle()\n13. isspace() ----> var.isspace()\n14. startswith() --> var.startswith(\'substring\',si, ei+1)\n15. endswith() ----> var.endswith(\'substring\', si, ei+1)\n16. iskeyword() ---> import keyword --> keyword.iskeyword(\'keyword_name\')\n17. isidentifier() ---> "var".isidentifier()\n18. join() ----> "joining_character".join(var)\n19. split() ----> var.split("spliting_char\', maxsplit)\n20. rsplit() ---> var.split("spliting_char\', maxsplit)\n21. index() ---> var.index(\'char\', si, ei+1)\n22. rindex() ---> var.rindex(\'char\', si, ei+1)\n23. find() ----> var.find(\'char\', si, ei+1)\n24. rfind() ---> var.rfind(\'char\', si, ei)\n25. strip() ----> var.strip(\'substring\')\n26. lstrip() ---> var.strip(\'substring\')\n27. rstrip() ---> var.strip(\'substring\')\n28. removeprefix() ----> var.removeprefix("substring\', si, ei+1)\n29. removesuffix() ---> var.removesuffix("substring", si, ei+1)\n30. replace() ---> var.replace("old", "new")\n31. del keyword ----> del var_name\n'
+
+
+
+# TUPLE()
+t = (1, 2, (1, 2, 3, 4), "abc", [1, 2, 3])
+t
+(1, 2, (1, 2, 3, 4), 'abc', [1, 2, 3])
+'''
+- combination of homogeneous + heterogeneos
+- immutable
+- ordered
+- accepts duplicate
+'''
+'\n- combination of homogeneous + heterogeneos\n- immutable\n- ordered\n- accepts duplicate\n'
+t.count(1)
+1
+
+t.index((1,2,3,4))
+2
+
+t.index("abc")
+3
+
+t[2]
+(1, 2, 3, 4)
+t[3]
+'abc'
+
+t.count(2)
+1
+t[2:4:1]
+((1, 2, 3, 4), 'abc')
+
+t[2][2]
+3
+t[4][0].reverse()
+Traceback (most recent call last):
+  File "<pyshell#189>", line 1, in <module>
+    t[4][0].reverse()
+AttributeError: 'int' object has no attribute 'reverse'
+t[4][0] = 7
+
+t[4][0] = 9
+t[4]
+[9, 2, 3]
+t[4][0] = 9
+
+
+t
+(1, 2, (1, 2, 3, 4), 'abc', [9, 2, 3])
+'''
+Tuple is immutable, we can not do modification because
+ - tuple has less methods
+ - does not support assignment operator
+ - for adding and removing the elements there is not methods in the tuple
+'''
+'\nTuple is immutable, we can not do modification because\n - tuple has less methods\n - does not support assignment operator\n - for adding and removing the elements there is not methods in the tuple\n'
+
+
+# LIST []
+'''
+- combination of homogeneous + heterogeneous
+- ordered
+- mutable
+- accept duplicates'''
+'\n- combination of homogeneous + heterogeneous\n- ordered\n- mutable\n- accept duplicates'
+
+l = [1, 2, 3, "abc", ('a', 'b', 'c'), [10, 20, 30]]
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30]]
+
+# 1 append()
+l.append("hi")
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30], 'hi']
+
+l.append({100:200})
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}]
+
+# 2 extend()
+l.append("hello")
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello']
+l.extend("ram")
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'a', 'm']
+
+# 3 insert()
+l.insert(55, 4)
+l
+[1, 2, 3, 'abc', ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'a', 'm', 4]
+
+l.insert(4, 55)
+l
+[1, 2, 3, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'a', 'm', 4]
+
+# 4 pop()
+l.pop()
+4
+
+l.pop(2)
+3
+l
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'a', 'm']
+
+# 5 remove()
+l.remove('a')
+l
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'm']
+l.
+SyntaxError: invalid syntax
+
+l.remove()
+Traceback (most recent call last):
+  File "<pyshell#248>", line 1, in <module>
+    l.remove()
+TypeError: list.remove() takes exactly one argument (0 given)
+
+# 6 count()
+l.count('a')
+0
+
+l.count(2)
+1
+
+l.append(2)
+l
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'm', 2]
+
+l.count(2)
+2
+
+# 7 index()
+l.index([10, 20, 30])
+5
+
+l.index('m')
+10
+
+# 8 copy()
+c = l
+c
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'm', 2]
+
+# 9 shallow copy()
+s = l.copy()
+s
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'm', 2]
+id(s)
+3174378075008
+id(l)
+3174378174720
+
+# deepcopy()
+from copy import deepcopy
+d = deepcopy(l)
+d
+[1, 2, 'abc', 55, ('a', 'b', 'c'), [10, 20, 30], 'hi', {100: 200}, 'hello', 'r', 'm', 2]
+
+id(d)
+3174378225984
+id(l)
+3174378174720
+
+# 11 reverse()
+l.reverse()
+l
+[2, 'm', 'r', 'hello', {100: 200}, 'hi', [10, 20, 30], ('a', 'b', 'c'), 55, 'abc', 2, 1]
+
+# 12 sort()
+l.sort()
+Traceback (most recent call last):
+  File "<pyshell#288>", line 1, in <module>
+    l.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+l.sort(reverse = False)
+Traceback (most recent call last):
+  File "<pyshell#289>", line 1, in <module>
+    l.sort(reverse = False)
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+'''for sort data type of every element must be same means int, string'''
+'for sort data type of every element must be same means int, string'
+
+# 13 clear()
+l.clear()
+l
+[]
+
+# 14 del keyword
+del l
+l
+Traceback (most recent call last):
+  File "<pyshell#299>", line 1, in <module>
+    l
+NameError: name 'l' is not defined
+
+'
+SyntaxError: unterminated string literal (detected at line 1)
+
+'''
+1. append() ---> var.append('element')
+2. extend() ----> var.extend('element')
+3. insert() ---> var.insert(position, value)
+4. pop() ----> var.pop(position)
+5. remove() ---> var.remove('element')
+6. clear() ---> var.clear()
+7. del keyword ---> del var 
+8. count() ----> var.count('char')
+9. index() ---> var.index('char', si, ei+1)
+10. copy() ---> new_var = old_var
+11. shallow_copy() ---->  new_var = old_var.copy()
+12. deepcopy() ----> from copy import deepcopy ---> new_var = deepcopy(old_var)
+13. reverse() ----> var.reverse()
+14. sort() ---> var.sort() or var.sort(reverse = False) or var.sort(reverse = True) or
+                var.sort(key=len, reverse = False) or var.sort(key=len, reverse = True)
+'''
+"\n1. append() ---> var.append('element')\n2. extend() ----> var.extend('element')\n3. insert() ---> var.insert(position, value)\n4. pop() ----> var.pop(position)\n5. remove() ---> var.remove('element')\n6. clear() ---> var.clear()\n7. del keyword ---> del var \n8. count() ----> var.count('char', si, ei+1)\n9. index() ---> var.index('char', si, ei+1)\n10. copy() ---> new_var = old_var\n11. shallow_copy() ---->  new_var = old_var.copy()\n12. deepcopy() ----> from copy import deepcopy ---> new_var = deepcopy(old_var)\n13. reverse() ----> var.reverse()\n14. sort() ---> var.sort() or var.sort(reverse = False) or var.sort(reverse = True) or\n                var.sort(key=len, reverse = False) or var.sort(key=len, reverse = True)\n"
+
+
+
+# DICIONARY
+'''
+- collection data type
+- collection of key:value pair
+- ordered
+- mutable
+- keys can not be duplicate but values can be duplicate
+- in place of key --> immutable + single value
+- can perform indexing and slicing
+'''
+'\n- collection data type\n- collection of key:value pair\n- ordered\n- mutable\n- keys can not be duplicate but values can be duplicate\n- in place of key --> immutable + single value\n- can perform indexing and slicing\n'
+
+d = {10:20, "hi":40, "snap":"hello", 100:200}
+d
+{10: 20, 'hi': 40, 'snap': 'hello', 100: 200}
+
+# 1 get()
+d.get(100)
+200
+
+d.get("hello")
+d
+{10: 20, 'hi': 40, 'snap': 'hello', 100: 200}
+
+d.get("snap")
+'hello'
+
+# 2 setdefault()
+d.setdefault(10)
+20
+
+d.setdefault(80, "Invalid")
+'Invalid'
+d
+{10: 20, 'hi': 40, 'snap': 'hello', 100: 200, 80: 'Invalid'}
+
+# 3 update()
+d.update({55:66, 23:(1, 2,3)})
+d
+{10: 20, 'hi': 40, 'snap': 'hello', 100: 200, 80: 'Invalid', 55: 66, 23: (1, 2, 3)}
+
+# 4 pop()
+d.pop(10)
+20
+d
+{'hi': 40, 'snap': 'hello', 100: 200, 80: 'Invalid', 55: 66, 23: (1, 2, 3)}
+
+# 5 popitem()
+d.popitem()
+(23, (1, 2, 3))
+d
+{'hi': 40, 'snap': 'hello', 100: 200, 80: 'Invalid', 55: 66}
+
+# 6 keys()
+d.keys()
+dict_keys(['hi', 'snap', 100, 80, 55])
+
+# 7 values()
+d.values()
+dict_values([40, 'hello', 200, 'Invalid', 66])
+
+# 8 items
+d.items()
+dict_items([('hi', 40), ('snap', 'hello'), (100, 200), (80, 'Invalid'), (55, 66)])
+
+# 9 copy()
+s = d
+s
+{'hi': 40, 'snap': 'hello', 100: 200, 80: 'Invalid', 55: 66}
+id(d)
+3174378365952
+id(s)
+3174378365952
+
+# 10 fromkeys()
+s = "ankita"
+dict.fromkeys(s)
+{'a': None, 'n': None, 'k': None, 'i': None, 't': None}
+
+t = (1, 2, 3)
+dict.fromkeys(t)
+{1: None, 2: None, 3: None}
+
+l = {10, 20}
+dict.fromkeys(l)
+{10: None, 20: None}
+
+# 11 clear()
+
+d.clear()
+d
+{}
+
+# 12 del keyword
+del d
+d
+Traceback (most recent call last):
+  File "<pyshell#393>", line 1, in <module>
+    d
+NameError: name 'd' is not defined. Did you mean: 'id'?
+
+'''
+1. get() ---> var.get("key")
+2. setdefault() ----> var.setdefault("key", "message")
+3. update() ---> var.update({key1:val1, key2:val2, ...})
+4. pop() ---> var.pop('key')
+5. popitem() ---> var.popitem()
+6. keys() ---> var.keys()
+7. values() ---> var.keys()
+8. items() ----> var.items()
+9. copy() ---> new_var = old_var
+10. fromkeys() ---> dict.fromkeys(var)
+11. clear() ---> var.clear()
+12. del keywod ---> del var_name
+'''
+'\n1. get() ---> var.get("key")\n2. setdefault() ----> var.setdefault("key", "message")\n3. update() ---> var.update({key1:val1, key2:val2, ...})\n4. pop() ---> var.pop(\'key\')\n5. popitem() ---> var.popitem()\n6. keys() ---> var.keys()\n7. values() ---> var.keys()\n8. items() ----> var.items()\n9. copy() ---> new_var = old_var\n10. fromkeys() ---> dict.fromkeys(var)\n11. clear() ---> var.clear()\n12. del keywod ---> del var_name\n'
+
+
+# SET
+'''
+- mutable
+- unordered
+- unique values
+- does not support duplicates
+'''
+'\n- mutable\n- unordered\n- unique values\n- does not support duplicates\n'
+
+s = {10, 30, "abc", "python", (1,2,3)}
+s
+{'python', 10, (1, 2, 3), 'abc', 30}
+
+# 1 add()
+s.add(100)
+s
+{100, 'python', 10, (1, 2, 3), 'abc', 30}
+
+# 2 update()
+s.update({'a', 'b'})
+s
+{'a', 100, 'b', 'python', 10, (1, 2, 3), 'abc', 30}
+
+# 3 pop()\
+s.pop()
+'a'
+
+# 4 remove()
+s.remove('b')
+s
+{100, 'python', 10, (1, 2, 3), 'abc', 30}
+
+# 5 discard()
+s.discard(10)
+s
+{100, 'python', (1, 2, 3), 'abc', 30}
+
+# 6 intersection
+p = {100, 300, "ankita", "python", 10, "abc"}
+p
+{'ankita', 100, 300, 'python', 10, 'abc'}
+s
+{100, 'python', (1, 2, 3), 'abc', 30}
+
+p.intersection(s)
+{'python', 'abc', 100}
+s.intersection(p)
+{'python', 'abc', 100}
+
+# 7 symmetric_difference()
+p.symmetric_difference(s)
+{'ankita', 300, 10, (1, 2, 3), 30}
+s.symmetric_difference(p)
+{'ankita', 300, 10, (1, 2, 3), 30}
+
+# 8 difference()
+p.difference(s)
+{'ankita', 10, 300}
+s.difference(p)
+{(1, 2, 3), 30}
+
+# 9 isdisjoint()
+p.isdisjoint(s)
+False
+s.isdisjoint(p)
+False
+
+# 10 issuperset()
+a = {300, "abc", 10}
+a.issuperset(p)
+False
+
+p.issuperset(a)
+True
+
+# 11 issubset()
+a.issubset()
+Traceback (most recent call last):
+  File "<pyshell#468>", line 1, in <module>
+    a.issubset()
+TypeError: set.issubset() takes exactly one argument (0 given)
+a.issubset(p)
+True
+p.issubset(a)
+False
+
+# 12 union()
+p.union(s)
+{'ankita', 100, 'python', 10, (1, 2, 3), 300, 'abc', 30}
+
+s.union(a)
+{100, 300, 'python', 10, (1, 2, 3), 'abc', 30}
+
+# 13 copy()
+r = a
+r
+{10, 'abc', 300}
+id(a)
+3174378439840
+id(r)
+3174378439840
+
+# 14 intersection_update()
+p
+{'ankita', 100, 300, 'python', 10, 'abc'}
+s
+{100, 'python', (1, 2, 3), 'abc', 30}
+p.intersection_update(s)
+p
+{'python', 'abc', 100}
+s
+{100, 'python', (1, 2, 3), 'abc', 30}
+
+s.intersection_update(p)
+s
+{'python', 100, 'abc'}
+p
+{'python', 'abc', 100}
+
+# 15 symmetric_difference_update()
+p = {100, 300, "ankita", "python", 10, "abc"}
+s = {10, 30, "abc", "python", (1,2,3)}
+
+p.symmetric_difference_update(s)
+p
+{'ankita', 100, 300, (1, 2, 3), 30}
+s
+{'python', 10, (1, 2, 3), 'abc', 30}
+
+s.symmetric_difference_update(p)
+s
+{'ankita', 100, 300, 'python', 10, 'abc'}
+p
+{'ankita', 100, 300, (1, 2, 3), 30}
+
+# 16 difference_update()
+p = {100, 300, "ankita", "python", 10, "abc"}
+s = {10, 30, "abc", "python", (1,2,3)}
+
+p.difference(s)
+{'ankita', 100, 300}
+p.difference_update(s)
+p
+{'ankita', 100, 300}
+s
+{'python', 10, (1, 2, 3), 'abc', 30}
+
+s.difference_update(p)
+s
+{'python', 10, (1, 2, 3), 'abc', 30}
+p
+{'ankita', 100, 300}
+
+# 17 clear()
+s.clear()
+s
+set()
+p.clear()
+p
+set()
+a.clear()
+a
+set()
+
+# 18 del keyword
+del s
+s
+Traceback (most recent call last):
+  File "<pyshell#529>", line 1, in <module>
+    s
+NameError: name 's' is not defined
+del p
+p
+Traceback (most recent call last):
+  File "<pyshell#531>", line 1, in <module>
+    p
+NameError: name 'p' is not defined
+dela
+Traceback (most recent call last):
+  File "<pyshell#532>", line 1, in <module>
+    dela
+NameError: name 'dela' is not defined
+del a
+>>> a
+Traceback (most recent call last):
+  File "<pyshell#534>", line 1, in <module>
+    a
+NameError: name 'a' is not defined
+>>> 
+>>> '''
+... 1. add() ----> var_name.add(element)
+... 2. update() ---> var_name(iterable)
+... 3. pop() ----> var_name.pop()
+... 4. remove() ---> var_name.remove(element)
+... 5. discard() ---> var_name.discard(element)
+... 6. clear() -----> var_name.clear()
+... 7. del keyword ---> del var_name
+... 8. intersection() -----> set1.intersection(set2)  or  var1.intersection(var2)
+... 9. symmetric_difference() -----> set1.symmetric_difference(set2)  or  var1.symmetric_difference(var2)
+... 10. difference() -----> set1.difference(set2)  or  var1.difference(var2)
+... 11. isdisjoint() ----> var1.isdisjoint(var2)
+... 12. issuperset() ----> var1.issuperset(var2)
+... 13. issubset() -----> var1.issubset(var2)
+... 14. union() ----> var1.union(var2)
+... 15. copy() -----> new_var = old_var
+... 16. intersection_update() ----> set1.intersection_update(set2)
+... 17. symmetric_difference_update() ---> set1.symmetric_difference_update(set2)
+... 18. difference_update() ----> sst1.difference_update(set2)
+... '''
+'\n1. add() ----> var_name.add(element)\n2. update() ---> var_name(iterable)\n3. pop() ----> var_name.pop()\n4. remove() ---> var_name.remove(element)\n5. discard() ---> var_name.discard(element)\n6. clear() -----> var_name.clear()\n7. del keyword ---> del var_name\n8. intersection() -----> set1.intersection(set2)  or  var1.intersection(var2)\n9. symmetric_difference() -----> set1.symmetric_difference(set2)  or  var1.symmetric_difference(var2)\n10. difference() -----> set1.difference(set2)  or  var1.difference(var2)\n11. isdisjoint() ----> var1.isdisjoint(var2)\n12. issuperset() ----> var1.issuperset(var2)\n13. issubset() -----> var1.issubset(var2)\n14. union() ----> var1.union(var2)\n15. copy() -----> new_var = old_var\n16. intersection_update() ----> set1.intersection_update(set2)\n17. symmetric_difference_update() ---> set1.symmetric_difference_update(set2)\n18. difference_update() ----> sst1.difference_update(set2)\n'
