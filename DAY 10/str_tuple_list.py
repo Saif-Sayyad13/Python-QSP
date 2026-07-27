@@ -335,5 +335,3 @@ print(id(list14[1])) ##4394328680
 #For this madatonary step to do
 # step1
 #From copy import deep copy
-
-
